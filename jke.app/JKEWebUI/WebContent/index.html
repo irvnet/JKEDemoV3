@@ -8,7 +8,7 @@
 <title>JKE Banking</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script type="text/javascript" djconfig="isDebug: false, parseOnLoad: true, baseUrl: 'dojo/', locale: 'en-us'" src="dojo/dojo.js"></script>
-	
+
 <script type="text/javascript">
 dojo.require("dojo.parser");
 dojo.require("dijit.layout.BorderContainer");
@@ -24,7 +24,7 @@ dojo.require("com.jke.AppController");
 dojo.addOnLoad( function() {
 	com.jke.AppController.reloadPage();
 	dojo.subscribe("/dojo/hashchange", this, com.jke.AppController.reloadPage);
-	
+
 	// wire up some actions
 	dojo.connect(dojo.byId("loginButton"), "onclick",
 				dojo.hitch(this, function(event) {
@@ -39,7 +39,7 @@ dojo.addOnLoad( function() {
 			dojo.hitch(this, function(event) {
 				com.jke.AppController.navigate({state: "accountSummary"});
 			}));
-			
+
 	// only show the page after it is fully rendered
 	dojo.style("mainLayout", "visibility", "visible");
 });
@@ -70,22 +70,22 @@ dojo.addOnLoad( function() {
 			</div>
 			<button dojoType="dijit.form.Button" label="Log in" id="loginButton"></button>
 			<br><br>
-			<a href="#">Did you forget your login information?</a>
-			
+			<a href="#">Did you forget your password?</a>
+
 		</div>
 		<div id="loggedInContent" style="display: none">
 			<p>Welcome, <span id="usersName"></span></p>
 			<button dojoType="dijit.form.Button" label="Logout" id="logoutButton"></button>
 		</div>
 	</div>
-	
+
 	<!-- Money That Matters portlet -->
 	<div dojotype="dijit.TitlePane" title="Money That Matters" class="portlet" toggleable="false" id="moneyMattersPortlet" style="display: none">
 		<ul class="linkList">
 			<li><a id="dividendContLink">Dividend Contribution</a></li>
 		</ul>
 	</div>
-	
+
 	<!-- miscellaneous, non-functional panes -->
 	<div dojotype="dijit.TitlePane" title="Services" class="portlet" toggleable="false">
 		<ul class="linkList">
